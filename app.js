@@ -72,7 +72,7 @@ app.put("/movies/:movieId/", async (request, response) => {
   const { movieId } = request.params;
   const movieDetails = request.body;
   const { directorId, movieName, leadActor } = movieDetails;
-  const updateQuery = `UPDATE movie SET director_id=${directorId},movie_name='${movieName}',lead_actor='${leadActor}' WHERE  player_id = ${playerId};`;
+  const updateQuery = `UPDATE movie SET director_id=${directorId},movie_name='${movieName}',lead_actor='${leadActor}' WHERE  movie_id = ${movieId};`;
   await db.run(updateQuery);
   response.send("Movie Details Updated");
 });
@@ -99,4 +99,4 @@ app.get("/directors/:directorId/movies/", async (request, response) => {
   response.send(teamData);
 });
 
-module.exports = express;
+module.exports = app;

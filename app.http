@@ -12,10 +12,10 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3001/movies/117/
+GET http://localhost:3001/movies/119/
 
 ###
-PUT http://localhost:3001/movies/117/
+PUT http://localhost:3001/movies/119/
 Content-Type: application/json
 
 {
